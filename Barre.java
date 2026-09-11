@@ -5,15 +5,15 @@ import java.awt.*;
 class Barre {
   // x es la coordonnée horizontale du centre de la barre
   // et y du haut de la barre
-  private int x, y, miLargeur, hauteur;
+  private int x, y, miLargeurNormal, miLargeur, hauteur;
   private Color couleur;
 
   public Barre() {
     x=175;
     y=310;
-    miLargeur=25;
+    miLargeurNormal=miLargeur=25;
     hauteur=9;
-    couleur = Color.blue;
+    couleur = Color.blue; 
   }
 
   public int getX() {
@@ -48,4 +48,9 @@ class Barre {
     motif.setColor(couleur);
     motif.fillRect(x-miLargeur,y,miLargeur*2,hauteur);
   }
+
+  public void resetMiLargeur() {
+    miLargeur=miLargeurNormal;
+  }
+
  }

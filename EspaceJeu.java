@@ -1,8 +1,8 @@
 //package cassebriques;
 
 import java.awt.*;
-import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 class EspaceJeu extends JPanel implements Runnable, MouseListener,
                                           MouseMotionListener {
@@ -20,6 +20,7 @@ class EspaceJeu extends JPanel implements Runnable, MouseListener,
   private final int SIMPLE=0;
   private final int NORME=1;
   private final int RAPIDE=2;
+  private final int PetiteBarre=3;
   
 
   // Champs d'instance
@@ -69,6 +70,7 @@ class EspaceJeu extends JPanel implements Runnable, MouseListener,
     // Premiére phase du jeu
     phase= ATTEND;
     delai = DELAI;
+    barre.resetMiLargeur();
 
     // Lancement de l'exécution du jeu dans un thread
     action = new Thread(this);
@@ -272,13 +274,20 @@ class EspaceJeu extends JPanel implements Runnable, MouseListener,
         case NORME :
           // Retour aux valeurs de base
           delai=DELAI;
+          barre.resetMiLargeur();
           break;
 
         case RAPIDE :
           // Accélération du traitement
           delai=(int)(DELAI/2);
           break;
+
+        case PetiteBarre :
+          // Rétrécissement de la barre
+          barre.setMiLargeur((int)(barre.getMiLargeur() * 0.90));
+          break;
       }
+
     }
 
     void lanceBoule(int angle) {

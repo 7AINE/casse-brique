@@ -1,7 +1,7 @@
 //package cassebriques;
 
-import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class CB extends JFrame implements ActionListener{
   // Espace de jeu

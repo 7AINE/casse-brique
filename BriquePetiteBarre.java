@@ -2,12 +2,12 @@
 
 import java.awt.Color;
 
- class BriquePetiteBarre extends Brique{
-   private final int PetiteBarre=3;
+class BriquePetiteBarre extends Brique {
+  private final int PetiteBarre = 3;
 
   public BriquePetiteBarre() {
     super();
-    couleur=Color.blue;
+    couleur = Color.blue;
   }
 
   public int choc() {

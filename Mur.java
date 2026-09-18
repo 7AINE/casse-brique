@@ -21,6 +21,9 @@ class Mur {
           case 3 :
             mur[l][c]=new BriquePetiteBarre();
             break;
+          case 4 :
+            mur[l][c]=new BriqueDoubleboule();
+            break;
           default :
             mur[l][c]=new Brique();
         }

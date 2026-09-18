@@ -15,6 +15,16 @@ class Boule {
     vitesse=5;
   }
 
+  public Boule(Boule autre) {
+    x = autre.x;
+    y = autre.y;
+    depX = -autre.depX;
+    depY = autre.depY;
+    rayon = autre.rayon;
+    vitesse = autre.vitesse;
+    couleur = autre.couleur;
+}
+
   public void angleDep(int angle) {
     // L'angle doit être compris entre 20 et 160 degrés (c'est mieux !)
     if (angle < 20){
